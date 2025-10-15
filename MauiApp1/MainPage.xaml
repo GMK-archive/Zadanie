@@ -3,16 +3,52 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiApp1.MainPage">
 
-    <ScrollView>
-        <VerticalStackLayout
-            Padding="30,0"
-            Spacing="25">
-            <Entry x:Name="ChatEntry"></Entry>
-            <ScrollView x:Name="ChatHistory">
-                
-            </ScrollView>
-            <Entry x:Name="ChatInput"></Entry>
-        </VerticalStackLayout>
-    </ScrollView>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Entry x:Name="UsernameEntry"
+               Placeholder=""
+               Grid.Row="0"
+               Grid.Column="0"
+               Margin="20"
+               HorizontalOptions="Fill"
+               WidthRequest="200"/>
+        <ScrollView x:Name="ChatScrollView" Grid.Row="1" Grid.Column="0">
+            <VerticalStackLayout x:Name="ChatHistory">
+                <Label Text="testtestesetresf"/>
+                <Label Text="testtestesetresf"/>
+                <Label Text="testtestesetresf"/>
+                <Label Text="testtestesetresf"/>
+                <Label Text="testtestesetresf"/>
+                <Label Text="testtestesetresf"/>
+                <Label Text="testtestesetresf"/>
+                <Label Text="testtestesetresf"/>
+                <Label Text="testtestesetresf"/>
+                <Label Text="testtestesetresf"/>
+                <Label Text="testtestesetresf"/>
+                <Label Text="testtestesetresf"/>
+                <Label Text="testtestesetresf"/>
+                <Label Text="testtestesetresf"/>
+                <Label Text="testtestesetresf"/>
+                <Label Text="testtestesetresf"/>
+            </VerticalStackLayout>
+        </ScrollView>
+        <Grid 
+            Grid.Row="2" Grid.Column="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Entry x:Name="ChatEntry"
+            Placeholder="Tu wpisz wiadomość" Grid.Column="0" Grid.Row="0"/>
+            <Button Grid.Column="1"  Text="Wyślij" Clicked="Send"/>
+        </Grid>
+    </Grid>
 
 </ContentPage>
