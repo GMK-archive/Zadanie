@@ -18,25 +18,9 @@
                Grid.Column="0"
                Margin="20"
                HorizontalOptions="Fill"
-               WidthRequest="200"/>
+               WidthRequest="1000"/>
         <ScrollView x:Name="ChatScrollView" Grid.Row="1" Grid.Column="0">
             <VerticalStackLayout x:Name="ChatHistory">
-                <Label Text="testtestesetresf"/>
-                <Label Text="testtestesetresf"/>
-                <Label Text="testtestesetresf"/>
-                <Label Text="testtestesetresf"/>
-                <Label Text="testtestesetresf"/>
-                <Label Text="testtestesetresf"/>
-                <Label Text="testtestesetresf"/>
-                <Label Text="testtestesetresf"/>
-                <Label Text="testtestesetresf"/>
-                <Label Text="testtestesetresf"/>
-                <Label Text="testtestesetresf"/>
-                <Label Text="testtestesetresf"/>
-                <Label Text="testtestesetresf"/>
-                <Label Text="testtestesetresf"/>
-                <Label Text="testtestesetresf"/>
-                <Label Text="testtestesetresf"/>
             </VerticalStackLayout>
         </ScrollView>
         <Grid 

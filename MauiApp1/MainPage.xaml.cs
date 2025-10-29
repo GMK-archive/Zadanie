@@ -25,7 +25,17 @@ namespace MauiApp1
         private void Send(object sender, EventArgs e)
         {
             string username = UsernameEntry.Text;
+            if (string.IsNullOrWhiteSpace(username))
+            {
+                DisplayAlert("Error", "Nie można wysać wiadomości", "OK");
+                return;
+            }
             string message = ChatEntry.Text;
+            if (string.IsNullOrWhiteSpace(message))
+            {
+                DisplayAlert("Error", "Nie można wysac pustej wiadomości", "OK");
+                return;
+            }
 
             ChatEntry.Text = string.Empty;
             //Label NewMessageLabel = new Label();
