@@ -70,6 +70,7 @@ namespace MauiApp1
             {
                 //ustawienie adresu bazowego
                 client.BaseAddress = new Uri("https://localhost:7159/");
+                client.DefaultRequestHeaders.Add("Authorization", "Bearer supertajnytoken");
                 //wykonanie żądania GET do endpointu /chat
                 HttpResponseMessage response = client.GetAsync("chat?timestamp=" + timestamp).Result;
                 //parsuj odpowiedź jako listę obiektów typu ChatMessage
