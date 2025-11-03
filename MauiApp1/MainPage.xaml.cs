@@ -44,6 +44,7 @@ namespace MauiApp1
             using (HttpClient client = new HttpClient())
             {
                 client.BaseAddress = new Uri("https://localhost:7159");
+                client.DefaultRequestHeaders.Add("Authorization", "Bearer superTajnyToken");
                 ChatMessage chatMessage = new ChatMessage
                 {
                     Autor = username,
@@ -70,7 +71,7 @@ namespace MauiApp1
             {
                 //ustawienie adresu bazowego
                 client.BaseAddress = new Uri("https://localhost:7159/");
-                client.DefaultRequestHeaders.Add("Authorization", "Bearer supertajnytoken");
+                client.DefaultRequestHeaders.Add("Authorization", "Bearer superTajnyToken");
                 //wykonanie żądania GET do endpointu /chat
                 HttpResponseMessage response = client.GetAsync("chat?timestamp=" + timestamp).Result;
                 //parsuj odpowiedź jako listę obiektów typu ChatMessage
