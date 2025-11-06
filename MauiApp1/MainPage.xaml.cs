@@ -43,7 +43,7 @@ namespace MauiApp1
             //ChatHistory.Children.Add(NewMessageLabel);
             using (HttpClient client = new HttpClient())
             {
-                client.BaseAddress = new Uri("https://localhost:7159");
+                client.BaseAddress = new Uri("http://localhost:5038");
                 client.DefaultRequestHeaders.Add("Authorization", "Bearer superTajnyToken");
                 ChatMessage chatMessage = new ChatMessage
                 {
@@ -51,7 +51,7 @@ namespace MauiApp1
                     Content = message,
                     Timestamp = DateTime.Now
                 };
-                HttpResponseMessage response = client.PostAsJsonAsync("chat", chatMessage).Result;
+                HttpResponseMessage response = client.PostAsJsonAsync("/chat/messages", chatMessage).Result;
                 if (response.IsSuccessStatusCode)
                 {
                     //Message sent successfully
@@ -70,10 +70,10 @@ namespace MauiApp1
             using (HttpClient client = new HttpClient())
             {
                 //ustawienie adresu bazowego
-                client.BaseAddress = new Uri("https://localhost:7159/");
+                client.BaseAddress = new Uri("http://localhost:5038/");
                 client.DefaultRequestHeaders.Add("Authorization", "Bearer superTajnyToken");
                 //wykonanie żądania GET do endpointu /chat
-                HttpResponseMessage response = client.GetAsync("chat?timestamp=" + timestamp).Result;
+                HttpResponseMessage response = client.GetAsync("/chat/messages?minimalDate=" + timestamp).Result;
                 //parsuj odpowiedź jako listę obiektów typu ChatMessage
                 List<ChatMessage> messages = response.Content.ReadFromJsonAsync<List<ChatMessage>>().Result
                                                                 ?? new List<ChatMessage>();
